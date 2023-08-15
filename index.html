@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel = "stylesheet" href = "./style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> <!--CSS Framework: Bulma -->
 </head>
 <body>
     <title>Got Crypto?</title>
@@ -11,11 +12,9 @@
         <h1>Crypto-Z0ne</h1>
         <div id="watchListButton" class = "visible">
             <button type = "button" id = "watchListButtonText"> <span id="watchListButtonText" style ="display:inline"> <img id="watchListButtonText" class="menuIcon" src="./assets/menu.png"></span>Watchlist</button>
-        </div> <!--for some reason, img will show inside button if there is no id, but then it wont be recognized by js-->
+        </div> 
     </section>
     
-
-
     <section  id="trendingSearch"class="heading">
         <h2>Trending Crypto</h2>
         <div id="featuredCryptoDiv" class="mainCenterDiv">  <!--Empty div for now, will be updated dynamically with JS -->
@@ -59,6 +58,26 @@
            </form>
        </div>
     </section>
+
+    <section id="marketLeadersSection" class="has-background-grey-light" > <!--Contains list of trending market news-->
+        <h2 class="has-text-black">Market News</h2>
+        <hr style="margin-top: 5px; margin-bottom: 5px;">
+        <div id="articleOne">
+            <h2 class="has-text-black">Crypto#1..</h2>
+            <a class="has-text-black" href="https://cointelegraph.com/news/five-catalysts-to-break-bitcoin-crypto-from-stupor-analysts">"Analysts believe spot Bitcoin ETFs…” </a>
+            <hr class="has-text-black" style="margin-top: 5px; margin-bottom: 5px;">
+        </div>
+        <div>
+            <h2>Crypto#2</h2>
+            <a href="https://cointelegraph.com/news/five-catalysts-to-break-bitcoin-crypto-from-stupor-analysts">"Analysts believe spot Bitcoin ETFs, new stablecoin adoption, and an upcoming Ethereum"</a>
+            <hr style="margin-top: 5px; margin-bottom: 5px;">
+        </div>
+
+    </section>
+    <br>
+
+
+
 
 
 

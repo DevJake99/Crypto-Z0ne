@@ -16,6 +16,7 @@ var coinID;
 var coinNews;
 
 
+
 function switchToHotList() {
     myList.removeClass("visible");
     myList.addClass("hidden");
