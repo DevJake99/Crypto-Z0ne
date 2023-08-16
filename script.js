@@ -15,8 +15,6 @@ var searchValue;
 var coinID;
 var coinNews;
 
-
-
 function switchToHotList() {
     myList.removeClass("visible");
     myList.addClass("hidden");
@@ -127,18 +125,43 @@ $(window).on("load", function() {
 //when the window loads, this function is ran once...
 
 
-
-
 submitButton.on("click", function (event) {
     event.preventDefault();
     searchValue = $("#searchValue").val();
     getCoinID();
+
+    var srd = $("#searchResultsDiv");
+    var coinImg = document.createElement("img");
+    var coinSym = document.createElement("a");
+    var coinName = document.createElement("h2");
+    var coinPrice = document.createElement("a");
+
+    var requestURL = "https://api.coingecko.com/api/v3/coins/list";
+    fetch (requestURL) 
+    .then (function (response) {
+        return response.json();
+    })
+    .then (function (data) {
+        for (var i = 0; i < data.length; i ++) {
+            if (searchValue == (data[i].id).toLowerCase()) {
+                var coinID = data[i].id;
+                //$(coinName).innerHTML(coinID.val);
+                srd.appendChild(coinName);
+                console.log(coinName);
+            }
+        }
+    })
+
+    //$(coinImg).attr("src","event.")
+
     //getCoinID is taking too long to retrieve the ID, need to set a timeout on getCoinInfoWithID() to make sure
     //getCoinID gets the ID before calling it
     setTimeout(getCoinInfoWithID, 1000);
     setTimeout(finnHub, 3000);
     retrieveTrendingCryptoData();
 })
+
+
 
 
 watchListButton.on("click", function () {
